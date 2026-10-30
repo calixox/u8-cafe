@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<!-- ==========================================
+     شروع بخش ۱: تنظیمات اولیه سایت (Head)
+     ========================================== -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U8 Cafe</title>
+    
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- پایان بخش ۱ -->
+
+<body>
+
+    <!-- ==========================================
+         شروع بخش ۲: منوی بالای سایت
+         ========================================== -->
+    <header>
+        <nav>
+            <ul>
+                <li><a onclick="showPage('home')">HOME</a></li>
+                <li><a onclick="showPage('full-menu')">MENU</a></li>
+                <li><a onclick="scrollToContact()">CONTACT US</a></li>
+            </ul>
+        </nav>
+
+        <div class="logo" onclick="toggleMusic()" title="پخش / توقف موزیک">U8</div>
+        <audio id="cafe-music" src="music.mp3" loop></audio>
+    </header>
+
+    <!-- ==========================================
+         دربرگیرنده تب اول: صفحه اصلی سایت
+         ========================================== -->
+    <div id="home" class="page-view active">
+
+        <!-- شروع بخش ۳: هدر خلوت و مینیمال -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Liquid Therapy</h1>
+                <p class="subtitle">A cozy place to slow down</p>
+            </div>
+        </section>
+
+        <!-- شروع بخش ۴: پیش‌نمایش منو -->
+        <section class="menu-section fade-in-section">
+            <div class="menu-header">
+                <h2 class="en-menu-title">MENU</h2>
+            </div>
+            
+            <div class="menu-grid">
+                <div class="menu-card fade-in-card">
+                    <img src="images/home-menu-1.jpg" alt="لاته کلاسیک" class="menu-img">
+                    <div class="menu-glassy-box">
+                        <h3>آیس لته</h3>
+                        <p>ترکیبی عالی از اسپرسو و شیر</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-card">
+                    <img src="images/home-menu-2.jpg" alt="آیس وانیلا" class="menu-img">
+                    <div class="menu-glassy-box">
+                        <h3>لته</h3>
+                        <p>خنک، شیرین و انرژی‌بخش</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-card">
+                    <img src="images/home-menu-3.jpg" alt="قهوه دمی" class="menu-img">
+                    <div class="menu-glassy-box">
+                        <h3>اسپرسو</h3>
+                        <p>عطر و طعم خالص قهوه تخصصی</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a onclick="showPage('full-menu')" class="btn-unique">VIEW FULL MENU</a>
+        </section>
+
+        <!-- شروع بخش ۵: بنر کافه دانشگاهی -->
+        <section class="about-banner fade-in-section">
+            <div class="banner-overlay-content">
+                <p class="banner-tag">Campus & Focus</p>
+                <h2>A quiet pause between lectures.</h2>
+                <p>Your campus sanctuary to recharge, focus, and read with a cup of warm coffee.</p>
+            </div>
+        </section>
+
+        <!-- شروع بخش ۸: فوتر سایت -->
+        <footer id="contact-us">
+            <div class="info">
+                <h3>ارتباط با ما</h3>
+                <p>آدرس: پردیس مهندسی، لابی دانشکده شیمی و مواد</p>
+                <p>اینستاگرام: YourInstagram@</p>
+            </div>
+        </footer>
+
+    </div> 
+    <!-- پایان تب اول (صفحه اصلی) -->
+
+
+    <!-- ==========================================
+         دربرگیرنده تب دوم: صفحه منوی کامل
+         ========================================== -->
+    <div id="full-menu" class="page-view">
+
+        <!-- شروع بخش ۶: منوی کامل - دکمه‌های فیلتر دسته‌بندی -->
+        <section class="category-filter">
+            <button class="cat-btn active" data-filter="all">همه</button>
+            <button class="cat-btn" data-filter="hot">بار گرم</button>
+            <button class="cat-btn" data-filter="cold">بار سرد</button>
+            <button class="cat-btn" data-filter="shake">شیک</button>
+            <button class="cat-btn" data-filter="dessert">دسر</button>
+        </section>
+
+        <!-- شروع بخش ۷: منوی کامل - لیست آیتم‌ها -->
+        <section class="full-menu-list">
+            
+            <!-- ======================= بار گرم ======================= -->
+            <div class="detailed-card" data-category="hot">
+                <div class="card-text-area">
+                    <h2>اسپرسو دبل</h2>
+                    <p>عصاره‌گیری دوگانه قهوه برای انرژی و تمرکز بالا در طول روز.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/hot-espresso-double.jpg" alt="اسپرسو دبل">
+                </div>
+            </div>
+
+            <div class="detailed-card reverse" data-category="hot">
+                <div class="card-text-area">
+                    <h2>چای دمی</h2>
+                    <p>چای سیاه اصیل دم‌کشیده با عطر و طعم کلاسیک.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/hot-brewed-tea.jpg" alt="چای دمی">
+                </div>
+            </div>
+
+            <div class="detailed-card" data-category="hot">
+                <div class="card-text-area">
+                    <h2>آمریکانو</h2>
+                    <p>ترکیب اسپرسو و آب داغ، ملایم اما با عطر و بادی قوی.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/hot-americano.jpg" alt="آمریکانو">
+                </div>
+            </div>
+
+            <div class="detailed-card reverse" data-category="hot">
+                <div class="card-text-area">
+                    <h2>لته کلاسیک</h2>
+                    <p>ترکیب ملایم اسپرسو با مقدار زیادی شیر گرم و بافت ابریشمی.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/hot-classic-latte.jpg" alt="لته کلاسیک">
+                </div>
+            </div>
+
+            <div class="detailed-card" data-category="hot">
+                <div class="card-text-area">
+                    <h2>کارامل ماکیاتو</h2>
+                    <p>ترکیب جذاب شیر گرم، فوم نرم، اسپرسو و سس کارامل شیرین.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/hot-caramel-macchiato.jpg" alt="کارامل ماکیاتو">
+                </div>
+            </div>
+
+            <div class="detailed-card reverse" data-category="hot">
+                <div class="card-text-area">
+                    <h2>موکا</h2>
+                    <p>هم‌نشینی بی‌نظیر قهوه، شیر گرم و سس شکلات خالص.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/hot-mocha.jpg" alt="موکا">
+                </div>
+            </div>
+
+            <div class="detailed-card" data-category="hot">
+                <div class="card-text-area">
+                    <h2>لته وانیل</h2>
+                    <p>لته کلاسیک با عطر و طعم دلنشین و شیرین سیروپ وانیل.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/hot-vanilla-latte.jpg" alt="لته وانیل">
+                </div>
+            </div>
+
+            <div class="detailed-card reverse" data-category="hot">
+                <div class="card-text-area">
+                    <h2>لته فندق</h2>
+                    <p>ترکیب جذاب و خوش‌عطر لته با سیروپ فندق.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/hot-hazelnut-latte.jpg" alt="لته فندق">
+                </div>
+            </div>
+
+            <div class="detailed-card" data-category="hot">
+                <div class="card-text-area">
+                    <h2>هات چاکلت</h2>
+                    <p>شکلات گرم و غلیظ با پودر کاکائوی درجه یک.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/hot-chocolate.jpg" alt="هات چاکلت">
+                </div>
+            </div>
+
+            <div class="detailed-card reverse" data-category="hot">
+                <div class="card-text-area">
+                    <h2>وایت چاکلت</h2>
+                    <p>نوشیدنی گرم بر پایه شکلات سفید، شیرین و خامه‌ای.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/hot-white-chocolate.jpg" alt="وایت چاکلت">
+                </div>
+            </div>
+
+            <div class="detailed-card" data-category="hot">
+                <div class="card-text-area">
+                    <h2>پینک چاکلت</h2>
+                    <p>شکلات گرم صورتی با طعم ملایم و ظاهری جذاب.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/hot-pink-chocolate.jpg" alt="پینک چاکلت">
+                </div>
+            </div>
+
+            <div class="detailed-card reverse" data-category="hot">
+                <div class="card-text-area">
+                    <h2>شیر کاکائو</h2>
+                    <p>ترکیب نوستالژیک و خوش‌طعم شیر تازه و کاکائو.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/hot-chocolate-milk.jpg" alt="شیر کاکائو">
+                </div>
+            </div>
+
+            <div class="detailed-card" data-category="hot">
+                <div class="card-text-area">
+                    <h2>چای ماسالا</h2>
+                    <p>ترکیب اصیل چای، شیر و ادویه‌های معطر و انرژی‌بخش.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/hot-masala-chai.jpg" alt="چای ماسالا">
+                </div>
+            </div>
+
+            <div class="detailed-card reverse" data-category="hot">
+                <div class="card-text-area">
+                    <h2>چای کرک</h2>
+                    <p>چای سنتی غلیظ با شیر و ادویه‌های خاص با طبع گرم.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/hot-karak-chai.jpg" alt="چای کرک">
+                </div>
+            </div>
+
+            <!-- ======================= بار سرد ======================= -->
+            <div class="detailed-card" data-category="cold">
+                <div class="card-text-area">
+                    <h2>آیس آمریکانو</h2>
+                    <p>اسپرسو به همراه آب سرد و یخ، خنک‌کننده و انرژی‌بخش.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/cold-ice-americano.jpg" alt="آیس آمریکانو">
+                </div>
+            </div>
+
+            <div class="detailed-card reverse" data-category="cold">
+                <div class="card-text-area">
+                    <h2>آیس لته کلاسیک</h2>
+                    <p>ترکیب خنک و ملایم اسپرسو، شیر تازه و یخ فراوان.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/cold-ice-classic-latte.jpg" alt="آیس لته کلاسیک">
+                </div>
+            </div>
+
+            <div class="detailed-card" data-category="cold">
+                <div class="card-text-area">
+                    <h2>آیس لته وانیل</h2>
+                    <p>آیس لته خنک با طعم شیرین و ملایم وانیل.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/cold-ice-vanilla-latte.jpg" alt="آیس لته وانیل">
+                </div>
+            </div>
+
+            <div class="detailed-card reverse" data-category="cold">
+                <div class="card-text-area">
+                    <h2>آیس لته فندق</h2>
+                    <p>نوشیدنی خنک بر پایه قهوه و شیر با عطر بی‌نظیر فندق.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/cold-ice-hazelnut-latte.jpg" alt="آیس لته فندق">
+                </div>
+            </div>
+
+            <div class="detailed-card" data-category="cold">
+                <div class="card-text-area">
+                    <h2>آیس لته کارامل</h2>
+                    <p>ترکیب دلچسب و خنک قهوه، شیر و شیرینی کارامل.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/cold-ice-caramel-latte.jpg" alt="آیس لته کارامل">
+                </div>
+            </div>
+
+            <div class="detailed-card reverse" data-category="cold">
+                <div class="card-text-area">
+                    <h2>آیس لته شکلات</h2>
+                    <p>آیس لته خنک ترکیب شده با طعم غلیظ سس شکلات.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/cold-ice-chocolate-latte.jpg" alt="آیس لته شکلات">
+                </div>
+            </div>
+
+            <div class="detailed-card" data-category="cold">
+                <div class="card-text-area">
+                    <h2>شیر موز</h2>
+                    <p>نوشیدنی خنک، مقوی و کلاسیک ترکیب شده از شیر و موز تازه.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/cold-banana-milk.jpg" alt="شیر موز">
+                </div>
+            </div>
+
+            <!-- ======================= شیک ======================= -->
+            <div class="detailed-card reverse" data-category="shake">
+                <div class="card-text-area">
+                    <h2>شیک اسپرسو</h2>
+                    <p>ترکیب هیجان‌انگیز بستنی وانیلی خنک با یک شات اسپرسو.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/shake-espresso.jpg" alt="شیک اسپرسو">
+                </div>
+            </div>
+
+            <div class="detailed-card" data-category="shake">
+                <div class="card-text-area">
+                    <h2>شیک نوتلا</h2>
+                    <p>طعم غلیظ و بی‌نظیر شکلات نوتلا میکس شده با بستنی.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/shake-nutella.jpg" alt="شیک نوتلا">
+                </div>
+            </div>
+
+            <div class="detailed-card reverse" data-category="shake">
+                <div class="card-text-area">
+                    <h2>شیک موز نوتلا</h2>
+                    <p>ترکیب محبوب موز تازه، نوتلا و بستنی برای یک طعم استثنایی.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/shake-banana-nutella.jpg" alt="شیک موز نوتلا">
+                </div>
+            </div>
+
+            <!-- ======================= دسر ======================= -->
+            <div class="detailed-card" data-category="dessert">
+                <div class="card-text-area">
+                    <h2>دونات</h2>
+                    <p>دونات تازه و نرم با روکش‌های متنوع و جذاب.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/dessert-donut.jpg" alt="دونات">
+                </div>
+            </div>
+
+            <div class="detailed-card reverse" data-category="dessert">
+                <div class="card-text-area">
+                    <h2>پیراشکی</h2>
+                    <p>پیراشکی کلاسیک و تازه با مغز کرم وانیلی یا شکلاتی.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/dessert-pirashki.jpg" alt="پیراشکی">
+                </div>
+            </div>
+
+            <div class="detailed-card" data-category="dessert">
+                <div class="card-text-area">
+                    <h2>کیک خیس</h2>
+                    <p>بافت نرم و مرطوب پر از شکلات، انتخابی عالی در کنار قهوه.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/dessert-wet-cake.jpg" alt="کیک خیس">
+                </div>
+            </div>
+
+            <div class="detailed-card reverse" data-category="dessert">
+                <div class="card-text-area">
+                    <h2>وافل</h2>
+                    <p>وافل ترد و گرم سرو شده با سس شکلات و تکه‌های میوه تازه.</p>
+                </div>
+                <div class="card-img-area">
+                    <img src="images/dessert-waffle.jpg" alt="وافل">
+                </div>
+            </div>
+
+        </section>
+
+    </div> 
+    <!-- پایان تب دوم (منوی کامل) -->
+
+    <script src="script.js"></script>
+</body>
+</html>
